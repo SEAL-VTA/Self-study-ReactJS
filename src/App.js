@@ -1,14 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import TodoList from './components/TodoList';
 
-function App() {
+// function App() {
+const App = () => {
+
+  const x = [1, 2, 3, { name: "SEAL" }];
+
   return (
-    <div className="App">
+    <div className="App" style={{border: '1px solid red'}}>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hello World React with x = {JSON.stringify(x)}
+          {console.log('value x = ', x)}
         </p>
+        <TodoList />
         <a
           className="App-link"
           href="https://reactjs.org"
