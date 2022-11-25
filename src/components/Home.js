@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import _ from 'lodash'
+import AddTodo from "./AddTodo";
+import DisplayTodo from "./DisplayTodo";
 
-const TodoList = () => {
+const Home = () => {
     const [todo, setTodo] = useState("")
     const [listTodo, setListTodo] = useState(
         [
@@ -16,6 +18,9 @@ const TodoList = () => {
     }
 
     const handleClickButton = () => {
+        if (!todo) {
+            alert(`Todo's ame is not empty`)
+        }
         let todoId = randomInt(4, 9999999999)
         let todoItem = {
             id: `todo${todoId}`,
@@ -24,7 +29,8 @@ const TodoList = () => {
 
         let currentTodoList = _.clone(listTodo);
         currentTodoList.push(todoItem);
-        setListTodo(currentTodoList)
+        setListTodo(currentTodoList);
+        setTodo("")
 
         // setListTodo([...listTodo, todoItem]);
     }
@@ -34,24 +40,26 @@ const TodoList = () => {
         setListTodo(currentTodoList)
     }
 
+    const myInfor = { inGame: 'SEAL', age: 20 }
     return (
         <div>
-            <label>Todo's Name: </label>
-            <input value={todo} type="text" onChange={(event) => { setTodo(event.target.value) }} />
-            <button type="button" onClick={(event) => { handleClickButton(event, 'button') }}>Submit</button>
+            <AddTodo
+                todo={todo}
+                setTodo={setTodo}
+                handleClickButton={handleClickButton}
+            />
             <br /><br />
-
-            <div>---- List Todo ----</div>
-            {listTodo.map((item, index) => {
-                return (
-                    <div id={item.id} key={item.id} onClick={() => handleDeleteTodo(item.id)}>{item.name}</div>
-                )
-            })}
+            <DisplayTodo
+                childData={listTodo}
+                name={"SEAL"}
+                myInfor={myInfor}
+                deleteTodoInParent={handleDeleteTodo}
+            />
         </div>
     );
 }
 
-// class TodoList extends React.Component {
+// class Home extends React.Component {
 
 //     state = {
 //         name: '',
@@ -69,4 +77,4 @@ const TodoList = () => {
 //     }
 // }
 
-export default TodoList;
+export default Home;
