@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import Home from './components/Home';
 import React from 'react';
 import AddNewProduct from './components/AddNewProduct';
