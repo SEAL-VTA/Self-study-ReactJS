@@ -17,7 +17,6 @@ const App = () => {
         </div>
         <p>
           Hello World React with x = {JSON.stringify(x)}
-          {console.log('value x = ', x)}
         </p>
         <Home />
       </header>
