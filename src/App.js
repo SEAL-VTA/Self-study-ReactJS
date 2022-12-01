@@ -3,11 +3,11 @@ import './App.scss';
 import Home from './components/Home';
 import React from 'react';
 import AddNewProduct from './components/AddNewProduct';
+import Product from './components/Products/Product';
+import 'react-image-lightbox/style.css';
 
 // function App() {
 const App = () => {
-
-  const x = [1, 2, 3, { name: "SEAL" }];
 
   return (
     <div className="App">
@@ -16,12 +16,14 @@ const App = () => {
           <img src={logo} className="App-logo" alt="logo" />
         </div>
         <p>
-          Hello World React with x = {JSON.stringify(x)}
+          <span>Hello World React</span> with SEAL
         </p>
         <Home />
       </header>
       <div className='content-right'>
         <AddNewProduct/>
+        <hr/> 
+        <Product/>
       </div>
     </div>
   );

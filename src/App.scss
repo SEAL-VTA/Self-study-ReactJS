@@ -3,16 +3,16 @@
     padding: 40px;
     font-size: 14px;
     background-color: #282c34;
-    height: calc(100vh - 80px);
+    height: auto;
     display: flex;
 
     .content-left {
-        width: 50%;
+        width: 20%;
         padding: 10px;
     }
 
     .content-right {
-        width: 50%;
+        width: 80%;
         padding: 10px;
         color: white;
     }
@@ -20,6 +20,10 @@
     .App-header {
         font-size: calc(10px + 2vmin);
         color: white;
+        span {
+            color: red;
+            font-size: 18px;
+        }
     }
 
     .App-logo {
@@ -67,3 +71,4 @@
 button {
     cursor: pointer;
 }
+

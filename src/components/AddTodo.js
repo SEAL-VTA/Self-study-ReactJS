@@ -1,4 +1,3 @@
-import React from "react";
 
 const AddTodo = (props) => {
     const {todo, setTodo, handleClickButton} = props;
