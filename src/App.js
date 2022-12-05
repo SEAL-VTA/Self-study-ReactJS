@@ -19,17 +19,10 @@ const App = () => {
   return (
     <Router>
       <Nav />
+
       <Switch>
-        <Route path="/product">
-          <Product />
-        </Route>
-        <Route path="/weather">
-          <div>Weather App</div>
-        </Route>
-        <Route path="/about">
-          <div>I'm SEAL</div>
-        </Route>
-        <Route path="/">
+        
+        <Route path="/" exact>
           <div className="App">
             <header className="App-header content-left">
               <div style={{ textAlign: "center" }}>
@@ -47,6 +40,23 @@ const App = () => {
             </div>
           </div>
         </Route>
+
+        <Route path="/product">
+          <Product />
+        </Route>
+
+        <Route path="/weather">
+          <div>Weather App</div>
+        </Route>
+
+        <Route path="/about">
+          <div>I'm SEAL</div>
+        </Route>
+
+        <Route path="*">
+          <div>404 NOT FOUND</div>
+        </Route>
+
       </Switch>
 
     </Router>
