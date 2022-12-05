@@ -5,27 +5,49 @@ import React from 'react';
 import AddNewProduct from './components/AddNewProduct';
 import Product from './components/Products/Product';
 import 'react-image-lightbox/style.css';
+import Nav from './components/Navigation/nav';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 // function App() {
 const App = () => {
 
   return (
-    <div className="App">
-      <header className="App-header content-left">
-        <div style={{ textAlign: "center" }}>
-          <img src={logo} className="App-logo" alt="logo" />
-        </div>
-        <p>
-          <span>Hello World React</span> with SEAL
-        </p>
-        <Home />
-      </header>
-      <div className='content-right'>
-        <AddNewProduct/>
-        <hr/> 
-        <Product/>
-      </div>
-    </div>
+    <Router>
+      <Nav />
+      <Switch>
+        <Route path="/about">
+          <Product />
+        </Route>
+        <Route path="/users">
+          {/* <Users /> */}
+        </Route>
+        <Route path="/">
+          <div className="App">
+            <header className="App-header content-left">
+              <div style={{ textAlign: "center" }}>
+                <img src={logo} className="App-logo" alt="logo" />
+              </div>
+              <p>
+                <span>Hello World React</span> with SEAL
+              </p>
+              <Home />
+            </header>
+            <div className='content-right'>
+              <AddNewProduct />
+              <hr />
+              <Product />
+            </div>
+          </div>
+        </Route>
+      </Switch>
+
+    </Router>
+
   );
 }
 
