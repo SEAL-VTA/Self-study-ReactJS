@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const CountDown = (props) =>{
-    const [count, setCount] = useState(10);
+    const [count, setCount] = useState(60);
 
     useEffect(() => {
         if(count === 0){
