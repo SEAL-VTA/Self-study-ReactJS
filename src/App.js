@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import Weather from './components/Weather/Weather';
 import OTP from './components/OTP/OTP';
+import WeatherByLocation from './components/Weather/WeatherByLocation';
 
 // function App() {
 const App = () => {
@@ -23,7 +24,7 @@ const App = () => {
       <Nav />
 
       <Switch>
-        
+
         <Route path="/" exact>
           <div className="App">
             <header className="App-header content-left">
@@ -47,7 +48,7 @@ const App = () => {
           <Product />
         </Route>
 
-        <Route path="/weather">
+        <Route path="/weather" exact>
           <Weather />
         </Route>
 
@@ -57,6 +58,10 @@ const App = () => {
 
         <Route path="/about">
           <div>I'm SEAL</div>
+        </Route>
+
+        <Route path="/weather/detail/:woeid">
+          <WeatherByLocation />
         </Route>
 
         <Route path="*">

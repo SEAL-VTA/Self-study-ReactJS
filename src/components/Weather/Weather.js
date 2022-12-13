@@ -9,7 +9,7 @@ const Weather = () => {
         let response = await axios({
             method: 'post',
             url: "http://localhost:8080/get-data-by-url",
-            data: { url: `https:https://www.metaweather.com/api/location/1236594/` }
+            data: { url: `https://www.metaweather.com/api/location/1236594/` }
         })
 
         setTimeout(() => {

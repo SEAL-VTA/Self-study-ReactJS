@@ -15,7 +15,7 @@ const Search = () => {
         let response = await axios({
             method: 'post',
             url: "http://localhost:8080/get-data-by-url",
-            data: { url: `https:https://www.metaweather.com/api/location/search/?query=${keyword}` }
+            data: { url: `https://www.metaweather.com/api/location/search/?query=${keyword}` }
         })
 
 
