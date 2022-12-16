@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CountDownAnimation from "./CountDownAnimation";
 import GenarateOTP from "./GenerateOTP";
 import InputOTP from "./InputOTP";
 import './OTP.scss';
